@@ -75,14 +75,25 @@ const Mfa = () => {
         padding: 2,
       }}
     >
-      <Box className="flex flex-col gap-4 md:flex-row">
-        <Typography
-          variant="h6"
-          gutterBottom
-          sx={{ textAlign: "center", mt: 3, fontWeight: "bold" }}
-        >
-          Set Up Two-Factor Authentication (2FA)
-        </Typography>
+      <Typography
+        variant="h6"
+        gutterBottom
+        sx={{ textAlign: "center", mt: 3, fontWeight: "bold" }}
+      >
+        Set Up Two-Factor Authentication (2FA)
+      </Typography>
+      <Box
+        className="flex flex-col gap-4 md:flex-row"
+        sx={{
+          p: 3,
+          boxShadow: 3,
+          borderRadius: 2,
+          bgcolor: "background.paper",
+          maxWidth: 500,
+          mx: "auto",
+          mt: 4,
+        }}
+      >
         <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
           <Typography variant="body1" paragraph>
             Follow these steps to complete the setup:
@@ -118,23 +129,23 @@ const Mfa = () => {
             complete the 2FA setup.
           </Typography>
         </Box>
-      </Box>
 
-      {qrCodeUrl && (
-        <Card sx={{ maxWidth: 300, padding: 2, marginBottom: 2 }}>
-          <CardContent sx={{ textAlign: "center" }}>
-            <QRCode value={qrCodeUrl} size={200} level="M" />
-            <Typography variant="body2" sx={{ marginTop: 2, color: "gray" }}>
-              {secretKey && (
-                <span>
-                  <strong>Secret Key: </strong>
-                  {secretKey}
-                </span>
-              )}
-            </Typography>
-          </CardContent>
-        </Card>
-      )}
+        {qrCodeUrl && (
+          <Card sx={{ maxWidth: 300, padding: 2, marginBottom: 2 }}>
+            <CardContent sx={{ textAlign: "center" }}>
+              <QRCode value={qrCodeUrl} size={200} level="M" />
+              <Typography variant="body2" sx={{ marginTop: 2, color: "gray" }}>
+                {secretKey && (
+                  <span>
+                    <strong>Secret Key: </strong>
+                    {secretKey}
+                  </span>
+                )}
+              </Typography>
+            </CardContent>
+          </Card>
+        )}
+      </Box>
 
       <form onSubmit={handleMfaSubmit} style={{ width: "100%", maxWidth: 400 }}>
         <Grid container spacing={2} justifyContent="center">
