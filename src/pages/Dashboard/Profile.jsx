@@ -33,7 +33,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(fetchProfile());
-  }, [dispatch]);
+  }, [dispatch, isUpdating]);
 
   useEffect(() => {
     if (profile) {
