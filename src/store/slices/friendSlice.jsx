@@ -4,9 +4,9 @@ import { fetchFriendList } from "../../services/api.services";
 export const getFriendsList = createAsyncThunk(
   "friends/fetchFriendsList",
   async (userId) => {
-    console.log("userId inside friend slice", userId);
+    // console.log("userId inside friend slice", userId);
     const response = await fetchFriendList(userId);
-    console.log("response from friendSlice", response);
+    // console.log("response from friendSlice", response);
     return response?.data?.friends;
   }
 );
@@ -26,7 +26,7 @@ const friendsSlice = createSlice({
       })
       .addCase(getFriendsList.fulfilled, (state, action) => {
         state.status = "succeeded";
-        console.log("action payload from friendlist", action.payload);
+        // console.log("action payload from friendlist", action.payload);
         state.list = action.payload;
       })
       .addCase(getFriendsList.rejected, (state, action) => {

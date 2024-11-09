@@ -34,7 +34,7 @@ const SignUpForm = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    console.log("clicking");
+    // console.log("clicking");
 
     setLoading(true);
 

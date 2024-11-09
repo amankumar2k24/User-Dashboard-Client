@@ -26,16 +26,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Accessing data from Redux state
   const user = useSelector((state) => state.auth.user);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const { logs, status, error } = useSelector((state) => state.activityLog);
   const { list: friendsList } = useSelector((state) => state.friends);
-  console.log("friendsList", friendsList);
+  // console.log("friendsList", friendsList);
   const darkMode = useSelector((state) => state.theme.darkMode);
 
   const [page, setPage] = useState(1);
-  const logsPerPage = 5; // Customize this to show more/less logs per page
+  const logsPerPage = 5; 
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -66,7 +65,6 @@ const Home = () => {
 
   return (
     <Grid container spacing={3} sx={{ marginTop: "4px" ,}}>
-      {/* Left Section: Activity Logs */}
       <Grid item xs={12} sm={7}>
         <Paper
           sx={{

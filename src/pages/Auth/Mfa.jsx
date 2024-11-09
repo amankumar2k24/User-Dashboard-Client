@@ -76,54 +76,51 @@ const Mfa = () => {
       }}
     >
       <Typography
-        variant="h6"
         gutterBottom
-        sx={{ textAlign: "center", mt: 3, fontWeight: "bold" }}
+        sx={{ textAlign: "center", mt: 3, fontWeight: "bold", fontSize: 24 }}
       >
         Set Up Two-Factor Authentication (2FA)
       </Typography>
       <Box
-        className="flex flex-col gap-4 md:flex-row"
+        className="flex flex-col gap-4 lg:flex-row justify-center items-center"
         sx={{
           p: 3,
           boxShadow: 3,
           borderRadius: 2,
           bgcolor: "background.paper",
-          maxWidth: 1000,
+          marginBottom: "20px",
           mx: "auto",
           mt: 4,
         }}
       >
         <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
-          <Typography variant="body1" paragraph>
+          <Typography variant="h6" sx={{ fontWeight: "bold" }} paragraph>
             Follow these steps to complete the setup:
           </Typography>
 
-          <Typography variant="body1" paragraph>
-            <strong>Step 1:</strong> Open your authenticator app (such as Google
-            Authenticator, Authy, or Microsoft Authenticator) on your mobile
-            device.
+          <Typography sx={{ fontSize: "15px", marginTop: "4px" }}>
+            <strong>Step 1:</strong> Open your Microsoft authenticator app
           </Typography>
 
-          <Typography variant="body1" paragraph>
+          <Typography sx={{ fontSize: "15px", marginTop: "4px" }}>
             <strong>Step 2:</strong> Scan the QR code displayed on this screen.
             In your app, choose the option to add a new account, then select
             “Scan a QR code.”
           </Typography>
 
-          <Typography variant="body1" paragraph>
+          <Typography sx={{ fontSize: "15px", marginTop: "4px" }}>
             <strong>Step 3:</strong> When prompted, choose “Work Account” in the
             authenticator app. You may also need to enter a name for this
             account.
           </Typography>
 
-          <Typography variant="body1" paragraph>
+          <Typography sx={{ fontSize: "15px", marginTop: "4px" }}>
             <strong>Step 4:</strong> Enter the secret key displayed below the QR
             code on this screen if required. This step is an alternative if
             you're unable to scan the QR code.
           </Typography>
 
-          <Typography variant="body1" paragraph>
+          <Typography sx={{ fontSize: "15px", marginTop: "4px" }}>
             <strong>Step 5:</strong> In your authenticator app, a Time-based
             One-Time Password (TOTP) code will appear. Enter this code below to
             complete the 2FA setup.
@@ -190,11 +187,6 @@ const Mfa = () => {
         </Grid>
       </form>
       <Divider sx={{ marginTop: 3 }} />
-      <Box sx={{ marginTop: 2, textAlign: "center" }}>
-        <Typography variant="body2" color="textSecondary">
-          Need help? <a href="#">Contact Support</a>
-        </Typography>
-      </Box>
     </Box>
   );
 };

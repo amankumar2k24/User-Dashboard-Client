@@ -9,7 +9,7 @@ export const fetchProfile = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetchProfileData();
-      console.log("response from fetchProfileData", response);
+      // console.log("response from fetchProfileData", response);
       return response;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -20,11 +20,11 @@ export const fetchProfile = createAsyncThunk(
 export const updateProfile = createAsyncThunk(
   "user/updateProfile",
   async ({ formData, userId }, { rejectWithValue }) => {
-    console.log("userId first ", userId);
+    // console.log("userId first ", userId);
     try {
       const response = await updateUserProfile(formData, userId);
-      console.log("respone from updateProfileSlice", response);
-      return response.data; 
+      // console.log("respone from updateProfileSlice", response);
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
@@ -45,7 +45,7 @@ const userSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchProfile.fulfilled, (state, action) => {
-        console.log("action.payload", action.payload);
+        // console.log("action.payload", action.payload);
         state.loading = false;
         state.profile = action.payload;
       })

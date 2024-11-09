@@ -9,7 +9,7 @@ import Friends from "../pages/Dashboard/Friends";
 const PrivateRoutes = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useSelector((state) => state.auth);
-  console.log("isAuthenticated", isAuthenticated);
+  // console.log("isAuthenticated", isAuthenticated);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
