@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.textParent {
+    overflow: hidden;
+    height: 30px;
+    position: relative;
+    width: 500px;
+    text-align: center;
+}
+
+.textChild {
+    right: 0;
+    top: 0;
+    animation: mymove 4s linear infinite;
+    position: absolute;
+}
+
+@keyframes mymove {
+    from {
+        left: 50%
+    }
+
+    to {
+        left: -130%
+    }
+}
