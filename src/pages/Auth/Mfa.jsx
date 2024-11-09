@@ -75,42 +75,49 @@ const Mfa = () => {
         padding: 2,
       }}
     >
-      <Typography variant="h6" gutterBottom sx={{ textAlign: "center", mt: 3 }}>
-        Set Up Two-Factor Authentication (2FA)
-      </Typography>
-      <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
-        <Typography variant="body1" paragraph>
-          Follow these steps to complete the setup:
+      <Box className="flex flex-col gap-4 md:flex-row">
+        <Typography
+          variant="h6"
+          gutterBottom
+          sx={{ textAlign: "center", mt: 3, fontWeight: "bold" }}
+        >
+          Set Up Two-Factor Authentication (2FA)
         </Typography>
+        <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
+          <Typography variant="body1" paragraph>
+            Follow these steps to complete the setup:
+          </Typography>
 
-        <Typography variant="body1" paragraph>
-          <strong>Step 1:</strong> Open your authenticator app (such as Google
-          Authenticator, Authy, or Microsoft Authenticator) on your mobile
-          device.
-        </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>Step 1:</strong> Open your authenticator app (such as Google
+            Authenticator, Authy, or Microsoft Authenticator) on your mobile
+            device.
+          </Typography>
 
-        <Typography variant="body1" paragraph>
-          <strong>Step 2:</strong> Scan the QR code displayed on this screen. In
-          your app, choose the option to add a new account, then select “Scan a
-          QR code.”
-        </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>Step 2:</strong> Scan the QR code displayed on this screen.
+            In your app, choose the option to add a new account, then select
+            “Scan a QR code.”
+          </Typography>
 
-        <Typography variant="body1" paragraph>
-          <strong>Step 3:</strong> When prompted, choose “Work Account” in the
-          authenticator app. You may also need to enter a name for this account.
-        </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>Step 3:</strong> When prompted, choose “Work Account” in the
+            authenticator app. You may also need to enter a name for this
+            account.
+          </Typography>
 
-        <Typography variant="body1" paragraph>
-          <strong>Step 4:</strong> Enter the secret key displayed below the QR
-          code on this screen if required. This step is an alternative if you're
-          unable to scan the QR code.
-        </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>Step 4:</strong> Enter the secret key displayed below the QR
+            code on this screen if required. This step is an alternative if
+            you're unable to scan the QR code.
+          </Typography>
 
-        <Typography variant="body1" paragraph>
-          <strong>Step 5:</strong> In your authenticator app, a Time-based
-          One-Time Password (TOTP) code will appear. Enter this code below to
-          complete the 2FA setup.
-        </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>Step 5:</strong> In your authenticator app, a Time-based
+            One-Time Password (TOTP) code will appear. Enter this code below to
+            complete the 2FA setup.
+          </Typography>
+        </Box>
       </Box>
 
       {qrCodeUrl && (
