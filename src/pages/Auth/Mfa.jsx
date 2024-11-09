@@ -11,18 +11,18 @@ import {
   CardContent,
   Divider,
 } from "@mui/material";
-import { verifyMFA } from "../../services/api.services"; 
+import { verifyMFA } from "../../services/api.services";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import QRCode from "react-qr-code"; 
+import QRCode from "react-qr-code";
 import { getToken, setToken } from "../../helper/tokenHelper";
 import { useSelector } from "react-redux";
 
 const Mfa = () => {
-  const { userId } = useParams(); 
+  const { userId } = useParams();
   const [mfaCode, setMfaCode] = useState("");
-  const [qrCodeUrl, setQrCodeUrl] = useState(""); 
-  const [secretKey, setSecretKey] = useState(""); 
+  const [qrCodeUrl, setQrCodeUrl] = useState("");
+  const [secretKey, setSecretKey] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { user: responseUser } = useSelector((state) => state.auth);
@@ -75,21 +75,43 @@ const Mfa = () => {
         padding: 2,
       }}
     >
-      <Typography
-        variant="h4"
-        gutterBottom
-        sx={{ fontWeight: 600, textAlign: "center" }}
-      >
-        Multi-Factor Authentication
+      <Typography variant="h6" gutterBottom sx={{ textAlign: "center", mt: 3 }}>
+        Set Up Two-Factor Authentication (2FA)
       </Typography>
-      <Typography
-        variant="body1"
-        paragraph
-        sx={{ textAlign: "center", maxWidth: 600 }}
-      >
-        Please scan the QR code with your authenticator app and enter the code
-        below.
-      </Typography>
+      <Box sx={{ maxWidth: 600, mx: "auto", textAlign: "left" }}>
+        <Typography variant="body1" paragraph>
+          Follow these steps to complete the setup:
+        </Typography>
+
+        <Typography variant="body1" paragraph>
+          <strong>Step 1:</strong> Open your authenticator app (such as Google
+          Authenticator, Authy, or Microsoft Authenticator) on your mobile
+          device.
+        </Typography>
+
+        <Typography variant="body1" paragraph>
+          <strong>Step 2:</strong> Scan the QR code displayed on this screen. In
+          your app, choose the option to add a new account, then select “Scan a
+          QR code.”
+        </Typography>
+
+        <Typography variant="body1" paragraph>
+          <strong>Step 3:</strong> When prompted, choose “Work Account” in the
+          authenticator app. You may also need to enter a name for this account.
+        </Typography>
+
+        <Typography variant="body1" paragraph>
+          <strong>Step 4:</strong> Enter the secret key displayed below the QR
+          code on this screen if required. This step is an alternative if you're
+          unable to scan the QR code.
+        </Typography>
+
+        <Typography variant="body1" paragraph>
+          <strong>Step 5:</strong> In your authenticator app, a Time-based
+          One-Time Password (TOTP) code will appear. Enter this code below to
+          complete the 2FA setup.
+        </Typography>
+      </Box>
 
       {qrCodeUrl && (
         <Card sx={{ maxWidth: 300, padding: 2, marginBottom: 2 }}>
