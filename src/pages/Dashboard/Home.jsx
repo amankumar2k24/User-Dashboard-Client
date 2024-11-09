@@ -18,7 +18,6 @@ import {
   CircularProgress,
   Box,
   Pagination,
-  Button,
 } from "@mui/material";
 import { getFriendsList } from "../../store/slices/friendSlice";
 import { toggleTheme } from "../../store/slices/themeSlice";
