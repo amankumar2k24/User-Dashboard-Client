@@ -89,7 +89,7 @@ const Mfa = () => {
           boxShadow: 3,
           borderRadius: 2,
           bgcolor: "background.paper",
-          maxWidth: 500,
+          maxWidth: 1000,
           mx: "auto",
           mt: 4,
         }}
